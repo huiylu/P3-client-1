@@ -8,7 +8,7 @@ const Signup = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   // TODO add form password verification
-    const[redirect, setRedirect] = useState(false)
+  const[redirect, setRedirect] = useState(false)
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -27,7 +27,7 @@ const Signup = (props) => {
       setRedirect(true);
     }).catch(err => console.log(`⛔️ Rutro:\n`, err));
   }
-  if (redirect) return<Redirect to= '/profile'/>
+  if (redirect) return <Redirect to='/profile'/>
 
 
   return (
