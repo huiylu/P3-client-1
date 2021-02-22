@@ -2,6 +2,7 @@ import { Route, Redirect } from 'react-router-dom';
 import Home from './pages/Home';
 import Auth from './pages/Auth';
 import Profile from './pages/Profile';
+import Search from './pages/Search';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const token = localStorage.getItem('jwtToken');
@@ -19,6 +20,7 @@ const Content = (props) => {
       <Route path='/auth' render={(renderProps) => (
         <Auth handleAuth={props.handleAuth} {...renderProps} />
       )} />
+      <Route path='/search' component={Search} />
       <PrivateRoute 
         path='/profile' 
         component={Profile} 
