@@ -1,4 +1,4 @@
-const Team =(props) => {
+const Team = (props) => {
     return (
         <div>
             <h1>The team: Arthur, Hui, Austin and Edgard </h1>

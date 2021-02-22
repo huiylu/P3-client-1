@@ -8,13 +8,13 @@ const Profile = (props) => {
 
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_SERVER_URL}/api/private`)
-    .then(response => {
-      setMessage(response.data.message);
-    })
-    .catch(err => {
-      console.log('🐻 Bad news bears, there is an error:\n', err);
-      props.handleAuth(null);
-    })
+      .then(response => {
+        setMessage(response.data.message);
+      })
+      .catch(err => {
+        console.log('🐻 Bad news bears, there is an error:\n', err);
+        props.handleAuth(null);
+      })
   }, []);
 
   if (!props.currentUser) return <Redirect to='/auth' />
@@ -22,7 +22,7 @@ const Profile = (props) => {
     <div>
       <h1>PROFILE PAGE</h1>
       <h4>{message}</h4>
-      <Playlist/>
+      <Playlist />
     </div>
   );
 }

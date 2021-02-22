@@ -1,4 +1,4 @@
-const Intro =(props) => {
+const Intro = (props) => {
     return (
         <h4>Listen to your favorite songs and add them to your playlist</h4>
     );

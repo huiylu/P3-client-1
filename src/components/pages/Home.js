@@ -1,7 +1,7 @@
 import Intro from "./Intro";
 import Team from "./Team";
 
-const Home =(props) => {
+const Home = (props) => {
     return (
         <div>
             <h1> home page</h1>
