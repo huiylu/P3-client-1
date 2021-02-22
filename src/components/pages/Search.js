@@ -3,7 +3,7 @@ const Search = (props) => {
         <div className="container">
             <h1>THIS IS WHERE YOU SEARCH MUSIC</h1>
             <form>
-                <input type="text"/>
+                <input className='search-bar' type="text"/>
             </form>
         </div>
     );
