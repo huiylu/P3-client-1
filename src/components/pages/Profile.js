@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Redirect } from 'react-router-dom';
+import Playlist from './Playlist'
 
 const Profile = (props) => {
   const [message, setMessage] = useState('Loading msg...');
@@ -21,6 +22,7 @@ const Profile = (props) => {
     <div>
       <h1>PROFILE PAGE</h1>
       <h4>{message}</h4>
+      <Playlist/>
     </div>
   );
 }

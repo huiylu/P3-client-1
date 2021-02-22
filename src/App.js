@@ -12,7 +12,9 @@ function App() {
     if (user) {
       // Sick add use stuff
       setCurrentUser(user);
+      console.log(currentUser)
       setIsAuthenticated(true);
+      console.log(isAuthenticated)
     } else {
       // Clear it all out
       setCurrentUser(null);
