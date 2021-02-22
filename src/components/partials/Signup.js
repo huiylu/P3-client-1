@@ -8,7 +8,7 @@ const Signup = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   // TODO add form password verification
-  const[redirect, setRedirect] = useState(false)
+  const [redirect, setRedirect] = useState(false)
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -27,7 +27,7 @@ const Signup = (props) => {
       setRedirect(true);
     }).catch(err => console.log(`⛔️ Rutro:\n`, err));
   }
-  if (redirect) return <Redirect to='/profile'/>
+  if (redirect) return <Redirect to='/profile' />
 
 
   return (
@@ -37,9 +37,9 @@ const Signup = (props) => {
         <div className="form-elem">
           <label htmlFor="name">Name: </label>
           {/* TODO: see if I need an ID for the label to work */}
-          <input 
-            type="text" 
-            name="name" 
+          <input
+            type="text"
+            name="name"
             placeholder="Display Name"
             onChange={e => setName(e.target.value)}
           />
