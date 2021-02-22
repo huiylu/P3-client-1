@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
 const Header = (props) => {
     let style = {
-        backgroundColor: 'chartreuse',
+        backgroundColor: 'gray',
         borderBottom: ' 3px solid black',
+        color: 'red',
         margin: 0,
         padding: '1em 0'
     }
@@ -10,11 +11,12 @@ const Header = (props) => {
         <nav>
             <Link className="nav-link" to='/'>Home</Link>{' | '}
             <Link className="nav-link" to='/profile'>Account</Link>{' | '}
+            {/* TODO Add Search for Music */}
             <span onClick={e => props.handleAuth(null)}> Logout</span>
         </nav>:
         <nav>
             <Link className="nav-link" to='/'>Home</Link>{' | '}
-            <Link className="nav-link" to='/auth'>Login or Signup</Link>{' | '}
+            <Link className="nav-link" to='/auth'>Login or Signup to Search for Music!</Link>{' | '}
         </nav>
         
     return (
