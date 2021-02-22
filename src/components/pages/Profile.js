@@ -19,9 +19,9 @@ const Profile = (props) => {
 
   if (!props.currentUser) return <Redirect to='/auth' />
   return (
-    <div>
-      <h1>PROFILE PAGE</h1>
-      <h4>{message}</h4>
+    <div className="container">
+      <h1>Welcome to your Playlists</h1>
+      <h4>Select one of your playlists to look through your songs.</h4>
       <Playlist />
     </div>
   );

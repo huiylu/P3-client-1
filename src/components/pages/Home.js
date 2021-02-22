@@ -3,10 +3,12 @@ import Team from "./Team";
 
 const Home = (props) => {
     return (
-        <div>
-            <h1> home page</h1>
+        <div className="container">
+            <h1>Home page</h1>
             <Intro />
-            <Team />
+            <div className="team">
+                <Team />
+            </div>
         </div>
     );
 }

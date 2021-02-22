@@ -10,13 +10,14 @@ const Header = (props) => {
     let conditionalLinks = props.currentUser ?
         <nav>
             <Link className="nav-link" to='/'>Home</Link>{' | '}
-            <Link className="nav-link" to='/profile'>Account</Link>{' | '}
+            <Link className="nav-link" to='/profile'>Playlists</Link>{' | '}
+            <Link className="nav-link" to='/search'>Search for Music!</Link>{' | '}
             {/* TODO Add Search for Music */}
-            <span onClick={e => props.handleAuth(null)}> Logout</span>
+            <span className="nav-link" onClick={e => props.handleAuth(null)}> Logout</span>
         </nav>:
         <nav>
             <Link className="nav-link" to='/'>Home</Link>{' | '}
-            <Link className="nav-link" to='/auth'>Login or Signup to Search for Music!</Link>{' | '}
+            <Link className="nav-link" to='/auth'>Login or Signup to Search for Music!</Link>
         </nav>
         
     return (
