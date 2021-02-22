@@ -4,10 +4,16 @@ import axios from 'axios';
 
 const Header = (props) => {
     const [redirect, setRedirect] = useState(false);
+    const [content, setContent] = useState([]);
+    const [searchResults, setSearchResults] = useState([]);
+    const [query, setQuery] = useState('');
+
 
     const handleSearch = e => {
         e.preventDefault();
-        // axios.get
+        axios.get(
+            `${process.env_REACT_APP_SERVER_URL}/songs`
+        )
         setRedirect(true)
     }
 
