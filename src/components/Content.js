@@ -24,8 +24,6 @@ const Content = (props) => {
       render={(renderProps) => (
         <SearchResults searchQuery={props.searchQuery} {...renderProps} />
       )}
-      // component={SearchResults} 
-      // searchQuery={props.searchQuery}
       />
       <PrivateRoute 
         path='/profile' 
