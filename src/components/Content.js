@@ -20,7 +20,13 @@ const Content = (props) => {
       <Route path='/auth' render={(renderProps) => (
         <Auth handleAuth={props.handleAuth} {...renderProps} />
       )} />
-      <Route path='/searchresults' component={SearchResults} />
+      <Route path='/searchresults' 
+      render={(renderProps) => (
+        <SearchResults searchQuery={props.searchQuery} {...renderProps} />
+      )}
+      // component={SearchResults} 
+      // searchQuery={props.searchQuery}
+      />
       <PrivateRoute 
         path='/profile' 
         component={Profile} 
