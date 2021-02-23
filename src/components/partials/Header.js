@@ -3,21 +3,21 @@ import { useState } from 'react';
 import axios from 'axios';
 
 const Header = (props) => {
-    const [redirect, setRedirect] = useState(false);
+    // const [redirect, setRedirect] = useState(false);
     const [content, setContent] = useState([]);
     const [searchResults, setSearchResults] = useState([]);
-    const [query, setQuery] = useState('');
 
+    // const handleSearch = e => {
+    //     e.preventDefault();
+    //     // axios.get(
+        //     `${process.env_REACT_APP_SERVER_URL}/songs`
+        // ).then(response => {
+        //     console.log(response.data);
+        // setRedirect(true)
+        // }).catch(err => console.log(`💩 oh pooh, there's a search error:\n`, err))
+    // }
 
-    const handleSearch = e => {
-        e.preventDefault();
-        axios.get(
-            `${process.env_REACT_APP_SERVER_URL}/songs`
-        )
-        setRedirect(true)
-    }
-
-    if (redirect) return <Redirect to='/searchresults' />
+    // if (redirect) return <Redirect to='/searchresults' />
 
     let style = {
         backgroundColor: 'gray',
@@ -34,10 +34,12 @@ const Header = (props) => {
         <nav>
             <Link className="nav-link" to='/'>Home</Link>{' | '}
             <Link className="nav-link" to='/profile'>Playlists</Link>{' | '}
-            <form onSubmit={handleSearch}>
-                <input type="text" placeholder="search for music" />
-                <button type="submit">Search</button>
-            </form>
+            {/* <form onSubmit={handleSearch}> */}
+            <span className="search-container">
+                <input type="text" onChange={e => props.setSearchQuery(e.target.value)} placeholder="search for music" />
+                <Link className="search-btn" to='/searchresults'>Search</Link>
+            </span>
+            {/* </form> */}
             {/* TODO Add Search for Music */}
             <span className="nav-link" onClick={e => props.handleAuth(null)}> Logout</span>
         </nav> :

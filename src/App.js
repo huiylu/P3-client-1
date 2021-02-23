@@ -7,6 +7,8 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  const [searchQuery, setSearchQuery] = useState('');
+
   const handleAuth = user => {
     console.log('Handling Authentication...');
     if (user) {
@@ -28,12 +30,14 @@ function App() {
       {/* TODO Remove div, add styling more intentionally */}
       <Header 
         currentUser={currentUser} 
-        handleAuth={handleAuth} 
+        handleAuth={handleAuth}
+        setSearchQuery={setSearchQuery}
       />
       <Content 
         currentUser={currentUser}
         isAuthenticated={isAuthenticated}
         handleAuth={handleAuth}
+        searchQuery={searchQuery}
       />
     </div>
   );
