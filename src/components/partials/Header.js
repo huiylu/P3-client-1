@@ -4,19 +4,17 @@ import axios from 'axios';
 
 const Header = (props) => {
     // const [redirect, setRedirect] = useState(false);
-    const [content, setContent] = useState([]);
-    const [searchResults, setSearchResults] = useState([]);
 
-    // const handleSearch = e => {
-    //     e.preventDefault();
-    //     // axios.get(
-        //     `${process.env_REACT_APP_SERVER_URL}/songs`
-        // ).then(response => {
-        //     console.log(response.data);
-        // setRedirect(true)
-        // }).catch(err => console.log(`💩 oh pooh, there's a search error:\n`, err))
-    // }
 
+    const handleSearch = () => {
+        console.log(props.searchQuery)
+        axios.get(
+            `${process.env.REACT_APP_SERVER_URL}/songs`,
+             ({params:props.searchQuery}))
+            .then(response => {
+            console.log('🐸', response);
+        }).catch(err => console.log(`💩 oh pooh, there’s a search error:\n`, err))
+    }
     // if (redirect) return <Redirect to='/searchresults' />
 
     let style = {
@@ -37,7 +35,7 @@ const Header = (props) => {
             {/* <form onSubmit={handleSearch}> */}
             <span className="search-container">
                 <input type="text" onChange={e => props.setSearchQuery(e.target.value)} placeholder="search for music" />
-                <Link className="search-btn" to='/searchresults'>Search</Link>
+                <Link className="search-btn" onClick={handleSearch} to='/searchresults'>Search</Link>
             </span>
             {/* </form> */}
             {/* TODO Add Search for Music */}

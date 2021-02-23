@@ -32,6 +32,7 @@ function App() {
         currentUser={currentUser} 
         handleAuth={handleAuth}
         setSearchQuery={setSearchQuery}
+        searchQuery={searchQuery}
       />
       <Content 
         currentUser={currentUser}
