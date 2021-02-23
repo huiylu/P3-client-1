@@ -9,8 +9,7 @@ const Header = (props) => {
 
     const handleSearch = () => {
         axios.get(
-            `${process.env_REACT_APP_SERVER_URL}/songs`
-            , props.searchQuery)
+            `${process.env.REACT_APP_SERVER_URL}/songs`)
             .then(response => {
             console.log(response.data);
         }).catch(err => console.log(`💩 oh pooh, there's a search error:\n`, err))
