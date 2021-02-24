@@ -33,9 +33,9 @@ function App() {
       <Header 
         currentUser={currentUser} 
         handleAuth={handleAuth}
-        content={content}
+        
         setContent={setContent}
-        content={content}
+        
       />
       <Content 
         currentUser={currentUser}

@@ -2,21 +2,24 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react';
 
 import axios from 'axios';
+import Content from '../Content';
 
 const Header = (props) => {
     const [searchQuery, setSearchQuery] = useState('');
+    const [spotifyToken, setSpotifyToken] = useState('')
 
     const handleSearch = () => {
         
         axios.get(
             `${process.env.REACT_APP_SERVER_URL}/songs`,
-            ({ params: searchQuery }))
+            ({ params: searchQuery}))
             .then(response => {
                 console.log('🐸', response);
-                console.log('🦀', props.content);
+                
                 props.setContent(response);
             }).catch(err => console.log(`💩 oh pooh, there’s a search error:\n`, err))
     }
+    
 
     let style = {
         backgroundColor: 'gray',
