@@ -8,7 +8,7 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [content, setContent] = useState([])
 
-  const [searchQuery, setSearchQuery] = useState('');
+  
 
   const handleAuth = user => {
     console.log('Handling Authentication...');
@@ -33,15 +33,14 @@ function App() {
       <Header 
         currentUser={currentUser} 
         handleAuth={handleAuth}
-        setSearchQuery={setSearchQuery}
-        searchQuery={searchQuery}
+        content={content}
         setContent={setContent}
       />
       <Content 
         currentUser={currentUser}
         isAuthenticated={isAuthenticated}
         handleAuth={handleAuth}
-        searchQuery={searchQuery}
+        
         content={content}
       />
     </div>

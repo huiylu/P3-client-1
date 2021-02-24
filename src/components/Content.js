@@ -22,7 +22,7 @@ const Content = (props) => {
       )} />
       <Route path='/searchresults'
         render={(renderProps) => (
-          <SearchResults searchQuery={props.searchQuery} {...renderProps} content={props.content}/>
+          <SearchResults  {...renderProps} content={props.content}/>
         )}
 
       />
