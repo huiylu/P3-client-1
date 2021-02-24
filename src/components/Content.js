@@ -14,6 +14,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 }
 
 const Content = (props) => {
+  {console.log('AAAAAAAAAAAAAA',props.content)}
   return (
     <main>
       <Route exact path='/' component={Home} />

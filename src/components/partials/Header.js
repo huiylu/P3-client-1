@@ -4,7 +4,6 @@ import { useState } from 'react';
 import axios from 'axios';
 
 const Header = (props) => {
-
     const [searchQuery, setSearchQuery] = useState('');
 
     const handleSearch = () => {
@@ -35,7 +34,7 @@ const Header = (props) => {
             <span className="search-container">
                 <input type="text" onChange={e => setSearchQuery(e.target.value)} placeholder="search for music" />
                 <Link className="search-btn" onClick={handleSearch} to='/searchresults'>Search</Link>
-            </span>{' | '}           
+            </span>{' | '}
             <span className="nav-link" onClick={e => props.handleAuth(null)}> Logout</span>
         </nav> :
         <nav>
