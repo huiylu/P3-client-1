@@ -27,13 +27,13 @@ const Header = (props) => {
     let conditionalLinks = props.currentUser ?
         <nav>
             <Link className="nav-link" to='/'>Home</Link>{' | '}
-            <Link className="nav-link" to='/profile'>Playlists</Link>{' | '}
+            <Link className="nav-link" to='/playlists'>Playlists</Link>{' | '}
             <span className="search-container">
                 <input type="text" onChange={e => props.setSearchQuery(e.target.value)} placeholder="search for music" />
                 <Link className="search-btn" onClick={handleSearch} to='/searchresults'>Search</Link>
             </span>{' | '}           
             <span className="nav-link" onClick={e => props.handleAuth(null)}> Logout</span>
-        </nav> :
+        </nav > :
         <nav>
             <Link className="nav-link" to='/'>Home</Link>{' | '}
             <Link className="nav-link" to='/auth'>Login or Signup to Search for Music!</Link>

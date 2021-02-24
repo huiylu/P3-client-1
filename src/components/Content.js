@@ -27,7 +27,7 @@ const Content = (props) => {
 
       />
       <PrivateRoute
-        path='/profile'
+        path='/playlists'
         component={Profile}
         currentUser={props.currentUser}
         handleAuth={props.handleAuth}
