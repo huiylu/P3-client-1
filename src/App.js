@@ -32,7 +32,6 @@ function App() {
         currentUser={currentUser} 
         handleAuth={handleAuth}
         setContent={setContent}
-        content={content}
       />
       <Content 
         currentUser={currentUser}
