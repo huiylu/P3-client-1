@@ -1,5 +1,4 @@
 const SearchResults = (props) => {
-    { console.log('💰', props.content.data) }
     let songList = props.content.data.song.map((song, i) => (
         <li>
             <h1 key={i} >{song.name}</h1>
