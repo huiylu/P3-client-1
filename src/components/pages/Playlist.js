@@ -18,7 +18,7 @@ const Playlist = (props) => {
             <ul className="playlist-list">
                 <li className="playlist-container">
                     <SpotifyPlayer
-                        uri="spotify:album:53x3QotGZ7k6B7rUnAdNBF"
+                        uri="spotify:track:3jjBPF4NDMCU51psU8JPpR" 
                         size={size}
                         view={view}
                         theme={theme}

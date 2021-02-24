@@ -1,7 +1,7 @@
 const PlaylistCard = (props) => {
     return (
         <div className="playlist-card">
-            <h1>Playlists here!</h1>
+            {props.songList}
         </div>
     );
 }

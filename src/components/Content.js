@@ -22,11 +22,12 @@ const Content = (props) => {
       )} />
       <Route path='/searchresults'
         render={(renderProps) => (
-          <SearchResults searchQuery={props.searchQuery} {...renderProps} />
+          <SearchResults searchQuery={props.searchQuery} {...renderProps} content={props.content}/>
         )}
+
       />
       <PrivateRoute
-        path='/profile'
+        path='/playlists'
         component={Profile}
         currentUser={props.currentUser}
         handleAuth={props.handleAuth}
