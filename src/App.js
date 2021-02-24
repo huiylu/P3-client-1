@@ -6,6 +6,7 @@ import Header from './components/partials/Header';
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [content, setContent] = useState([])
 
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -33,12 +34,14 @@ function App() {
         handleAuth={handleAuth}
         setSearchQuery={setSearchQuery}
         searchQuery={searchQuery}
+        setContent={setContent}
       />
       <Content 
         currentUser={currentUser}
         isAuthenticated={isAuthenticated}
         handleAuth={handleAuth}
         searchQuery={searchQuery}
+        content={content}
       />
     </div>
   );
