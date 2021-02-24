@@ -14,6 +14,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 }
 
 const Content = (props) => {
+  {console.log('AAAAAAAAAAAAAA',props.content)}
   return (
     <main>
       <Route exact path='/' component={Home} />
@@ -22,7 +23,7 @@ const Content = (props) => {
       )} />
       <Route path='/searchresults'
         render={(renderProps) => (
-          <SearchResults searchQuery={props.searchQuery} {...renderProps} content={props.content}/>
+          <SearchResults {...renderProps} content={props.content}/>
         )}
 
       />
