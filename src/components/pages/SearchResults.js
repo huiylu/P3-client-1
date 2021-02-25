@@ -7,13 +7,17 @@ const SearchResults = (props) => {
     
 
     let songList
+<<<<<<< HEAD
     
+=======
+
+
+>>>>>>> 5736fb312102abf0364b42e5bddf441fe11f9b4c
 
     if (props.content.length > 0) {
         songList = props.content.map((song, i) => (
             <li className="song-card">
                 <h4 key={i}>{song.name}</h4>
-                <input type="submit" value="Add to Playlist" />
             </li>
         ))
     } else {
@@ -27,6 +31,10 @@ const SearchResults = (props) => {
                 <h1>THIS IS WHERE YOUR SEARCH RESULTS WILL BE</h1>
                 {/* <li className="song-card">This is the song card.</li> */}
                 {/* <PlaylistCard songList={songList} /> */}
+<<<<<<< HEAD
+=======
+                <SongSearch songList={songList} />
+>>>>>>> 5736fb312102abf0364b42e5bddf441fe11f9b4c
             </div>
             <SongSearch songList={songList} />
         </div>
