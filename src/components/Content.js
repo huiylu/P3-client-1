@@ -1,4 +1,5 @@
 import { Route, Redirect } from 'react-router-dom';
+import { useState } from 'react';
 import Home from './pages/Home';
 import Auth from './pages/Auth';
 import Profile from './pages/Profile';
@@ -14,6 +15,8 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 }
 
 const Content = (props) => {
+  const [title, setTitle] = useState('');
+
   {console.log('AAAAAAAAAAAAAA',props.content)}
   return (
     <main>
@@ -32,6 +35,8 @@ const Content = (props) => {
         component={Profile}
         currentUser={props.currentUser}
         handleAuth={props.handleAuth}
+        setTitle={setTitle}
+        title={title}
       />
     </main>
   );
