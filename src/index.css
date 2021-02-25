@@ -53,11 +53,12 @@ code {
 .playlist-list {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   margin-left: auto;
   margin-right: auto;
 }
 
-.playlist-container {
+/* .playlist-container {
   display: flex;
   flex-direction: column;
   width: 600px;
@@ -67,12 +68,36 @@ code {
   border: 1px solid black;
   justify-content: space-around;
   box-shadow: 3px 3px 10px  rgb(90, 90, 90);
+} */
+
+.inner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.song-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25em;
+  height: 3em;
+  background-color:rgb(255, 255, 255);
+  border: 1px solid black;
+  box-shadow: 3px 3px 10px rgb(90, 90, 90);
+  margin-top: 3vh;
+  margin-bottom: 5vh;
 }
 
 .playlist-card {
-  width: 3em;
-  height: 2em;
-  background-color:rgb(53, 19, 19);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25em;
+  height: 3em;
+  background-color:rgb(255, 255, 255);
   border: 1px solid black;
-  box-shadow: 3px 3px 10px rgb(90, 90, 90)
+  box-shadow: 3px 3px 10px rgb(90, 90, 90);
+  margin-top: 3vh;
+  margin-bottom: 5vh;
 }
