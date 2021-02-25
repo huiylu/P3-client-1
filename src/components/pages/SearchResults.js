@@ -3,8 +3,12 @@ import SongSearch from '../partials/SongSearch'
 
 const SearchResults = (props) => {
     { console.log('🙏🏼', props.content.length) }
+
     
+
     let songList
+    
+
     if (props.content.length > 0) {
         songList = props.content.map((song, i) => (
             <li className="song-card">

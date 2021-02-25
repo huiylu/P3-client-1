@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Auth from './pages/Auth';
 import Profile from './pages/Profile';
 import SearchResults from './pages/SearchResults';
+import { useState } from 'react';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const token = localStorage.getItem('jwtToken');
@@ -14,6 +15,9 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 }
 
 const Content = (props) => {
+  const [title, setTitle] = useState('')
+
+
   {console.log('AAAAAAAAAAAAAA',props.content)}
   return (
     <main>
@@ -32,6 +36,7 @@ const Content = (props) => {
         component={Profile}
         currentUser={props.currentUser}
         handleAuth={props.handleAuth}
+        setTitle={setTitle}
       />
     </main>
   );
