@@ -18,7 +18,6 @@ const SearchResults = (props) => {
         <h1>Loading</h1>
     }
 
-
     return (
         <div className="container">
             {/* <h1>THIS IS WHERE YOUR SEARCH RESULTS WILL BE</h1> */}
