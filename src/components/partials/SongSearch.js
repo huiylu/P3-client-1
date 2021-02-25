@@ -1,8 +1,6 @@
 const SongSearch = (props) => {
     return (
-        <div className="song-card">
-            {props.songList}
-        </div>
+            <li className="song-card">{props.songList}</li>
     );
 }
 

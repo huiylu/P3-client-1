@@ -2,23 +2,19 @@ import SongSearch from '../partials/SongSearch'
 
 
 const SearchResults = (props) => {
-    
-    { console.log('🙏🏼', props.content)}
-    
-    
-    
-    if (props.content.data.song.length >0) {
-        
-            let songList = props.content.data.song.map((song, i) => (
-                <li className="song-list-result">
-                    <h1 key={i}>{song.name}</h1>
-                </li>
-            ))
-        
-        } else {
 
-        }
-
+    { console.log('🙏🏼', props.content.length) }
+    let songList
+    
+    if (props.content.length > 0) {
+        songList = props.content.map((song, i) => (
+            <li className="song-list-result">
+                <h4 key={i}>{song.name}</h4>
+            </li>
+        ))
+    } else {
+        <h1>Loading</h1>
+    }
 
     return (
         
