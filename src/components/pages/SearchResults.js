@@ -3,13 +3,19 @@ import SongSearch from '../partials/SongSearch'
 
 const SearchResults = (props) => {
 
-    { console.log('🙏🏼', props.content) }
+    { console.log('🙏🏼', props.content.length) }
+    let songList
+    
+    if (props.content.length > 0) {
+        songList = props.content.map((song, i) => (
+            <li className="song-list-result">
+                <h4 key={i}>{song.name}</h4>
+            </li>
+        ))
+    } else {
+        <h1>Loading</h1>
+    }
 
-    // let songList = props.content.data.song.map((song, i) => (
-    //     <li className="song-list-result">
-    //         <h1 key={i}>{song.name}</h1>
-    //     </li>
-    // ))
     return (
         <div className="container">
             {/* <h1>THIS IS WHERE YOUR SEARCH RESULTS WILL BE</h1> */}
@@ -17,7 +23,7 @@ const SearchResults = (props) => {
                 <h1>THIS IS WHERE YOUR SEARCH RESULTS WILL BE</h1>
                 {/* <li className="song-card">This is the song card.</li> */}
                 {/* <PlaylistCard songList={songList} /> */}
-                <SongSearch />
+                <SongSearch songList={songList}/>
             </div>
         </div>
     );
