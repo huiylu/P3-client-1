@@ -2,6 +2,7 @@ import SongSearch from '../partials/SongSearch'
 
 
 const SearchResults = (props) => {
+
     { console.log('🙏🏼', props.content.length) }
     let songList
 
@@ -16,6 +17,8 @@ const SearchResults = (props) => {
     } else {
         <h1>Loading</h1>
     }
+
+
     return (
         <div className="container">
             {/* <h1>THIS IS WHERE YOUR SEARCH RESULTS WILL BE</h1> */}
