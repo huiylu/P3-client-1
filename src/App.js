@@ -32,8 +32,7 @@ function App() {
       {/* TODO Remove div, add styling more intentionally */}
       <Header 
         currentUser={currentUser} 
-        handleAuth={handleAuth}
-        
+        handleAuth={handleAuth}        
         setContent={setContent}
         
       />
@@ -41,7 +40,6 @@ function App() {
         currentUser={currentUser}
         isAuthenticated={isAuthenticated}
         handleAuth={handleAuth}
-        
         content={content}
       />
     </div>

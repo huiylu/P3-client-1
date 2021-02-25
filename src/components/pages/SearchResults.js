@@ -5,12 +5,15 @@ const SearchResults = (props) => {
     
     { console.log('🙏🏼', props.content)}
     
-    let songList = props.content.data.song.map((song, i) => (
+    
+    let songList = props.content.data.results.map((song, i) => (
         <li className="song-list-result">
             <h1 key={i}>{song.name}</h1>
         </li>
     ))
+    
     return (
+        
         <div className="container">
             {/* <h1>THIS IS WHERE YOUR SEARCH RESULTS WILL BE</h1> */}
             <div className="search-results">
