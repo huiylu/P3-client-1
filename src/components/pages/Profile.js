@@ -18,13 +18,57 @@ const Profile = (props) => {
       })
   }, []);
 
+
+//   //useEffect
+// const getPlaylists = (e) => {
+//   e.preventDefault();
+//   axios.get(`${process.env.REACT_APP_SERVER_URL}/playlist`)
+//   .then(res => {
+//       console.log(res.data)
+//   }).catch(err => (console.log(`ERROR GETTING ALL PLAYLISTS 🤬`, err)));
+// };
+// const createPlaylist = (e) => {
+//   e.preventDefault();
+//   axios.post(
+//       `${process.env.REACT_APP_SERVER_URL}/playlist`,
+//       { title }
+//       ).then(response => {
+//           console.log(response.data)
+//       }).catch(err => console.log(`CREATE PLAYLIST ERROR 🤬`, err));
+// };
+// //useEffect for on load
+// const getPlaylist = (e) => {
+//   e.preventDefault();
+//   axios.get(`${process.env.REACT_APP_SERVER_URL}/playlist/:id`)
+//   .then(response => {
+//       console.log(response.data)
+//   }).catch(err => console.log(`ERROR GETTING PLAYLIST 😡`, err))
+// };
+// const updatePlaylist = (e) => {
+//   e.preventDefault();
+//   axios.put(`${process.env.REACT_APP_SERVER_URL}/playlist/:id`, { title, songs })
+//   .then(response => {
+//       console.log(response.data)
+//   }).catch(err => { console.log(`ERROR UPDATING PLAYLIST`, err)})
+// };
+const deletePlaylist = (e) => {
+  e.preventDefault();
+  axios.delete(`${process.env.REACT_APP_SERVER_URL}/playlist/:id`)
+  .then(response => {
+      console.log(response.status)
+  }).catch(err => console.log(`ERROR DELETING PLAYLIST 😤`, err))
+}
+
+
+
   if (!props.currentUser) return <Redirect to='/auth' />
   return (
     <div className="container">
       <h1>Welcome to your Playlists</h1>
       <h4>Select one of your playlists to look through your songs.</h4>
       <div className="inner-container">
-        <PlaylistCard />
+        <PlaylistCard 
+        deletePlaylist={deletePlaylist} /> 
       </div>
     </div>
   );

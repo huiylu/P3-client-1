@@ -7,8 +7,9 @@ const SearchResults = (props) => {
     let songList
     if (props.content.length > 0) {
         songList = props.content.map((song, i) => (
-            <li className="song-list-result">
+            <li className="song-card">
                 <h4 key={i}>{song.name}</h4>
+                <input type="submit" value="Add to Playlist" />
             </li>
         ))
     } else {
