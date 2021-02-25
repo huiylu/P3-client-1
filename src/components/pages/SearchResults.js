@@ -6,12 +6,20 @@ const SearchResults = (props) => {
     { console.log('🙏🏼', props.content)}
     
     
-    let songList = props.content.data.results.map((song, i) => (
-        <li className="song-list-result">
-            <h1 key={i}>{song.name}</h1>
-        </li>
-    ))
     
+    if (props.content.data.song.length >0) {
+        
+            let songList = props.content.data.song.map((song, i) => (
+                <li className="song-list-result">
+                    <h1 key={i}>{song.name}</h1>
+                </li>
+            ))
+        
+        } else {
+
+        }
+
+
     return (
         
         <div className="container">
@@ -20,8 +28,11 @@ const SearchResults = (props) => {
                 <h1>THIS IS WHERE YOUR SEARCH RESULTS WILL BE</h1>
                 {/* <li className="song-card">This is the song card.</li> */}
                 {/* <PlaylistCard songList={songList} /> */}
-                <SongSearch />
             </div>
+            
+                <SongSearch songList={songList} />
+
+            
         </div>
     );
 }

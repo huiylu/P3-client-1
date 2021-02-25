@@ -1,26 +1,26 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react';
-
 import axios from 'axios';
 import Content from '../Content';
-
 const Header = (props) => {
     const [searchQuery, setSearchQuery] = useState('');
-    const [spotifyToken, setSpotifyToken] = useState('Arthur')
-
+    console.log(props.spotifyToken)
     const handleSearch = () => {
-        // let query = spotifyToken ?  {params: {searchQuery, spotifyToken}}  : {params: {searchQuery}} 
+        console.log('Inside the function', props.spotifyToken)
+        if(!props.spotifyToken) {
+            console.log('no token friend')
+            props.fetchToken();
+        }
+        let token = props.spotifyToken
+        let query = {params: {searchQuery, token}}
         axios.get(
-            `https://swapi.dev/api/starships/`)
-            // `${process.env.REACT_APP_SERVER_URL}/songs`
-            // query)
+            `${process.env.REACT_APP_SERVER_URL}/songs`,
+            query)
             .then(response => {
-                console.log('🐸', response);
-                // setSpotifyToken(response.data.setSpotifyToken)
+                console.log('🐸', response.data);
                 props.setContent(response);
-            }).catch(err => console.log(`💩 oh pooh, there’s a search error:\n`, err))
+            }).catch(err => console.log(`💩 oh pooh, there's a search error:\n`, err))
     }
-
     let style = {
         backgroundColor: 'gray',
         borderBottom: ' 3px solid black',
@@ -28,8 +28,6 @@ const Header = (props) => {
         margin: 0,
         padding: '1em 0'
     }
-
-
     let conditionalLinks = props.currentUser ?
         <nav>
             <Link className="nav-link" to='/'>Home</Link>{' | '}
@@ -44,7 +42,6 @@ const Header = (props) => {
             <Link className="nav-link" to='/'>Home</Link>{' | '}
             <Link className="nav-link" to='/auth'>Login or Signup to Search for Music!</Link>
         </nav>
-
     return (
         <header style={style}>
             <h2> Its a website!</h2>
@@ -52,5 +49,4 @@ const Header = (props) => {
         </header>
     );
 }
-
 export default Header
