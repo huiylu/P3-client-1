@@ -1,4 +1,5 @@
 const PlaylistCard = (props) => {
+
     let playlistList
     console.log(props.playlists, '🤒')
     if (props.playlists.length > 0) {
@@ -15,10 +16,13 @@ const PlaylistCard = (props) => {
         return <h4>You haven't made a playlist yet!</h4>
     }
     console.log('😤', playlistList)
+
     return (
         <div>
-            {playlistList}
+            {props.playlistList}
         </div>
+
     );
 }
+
 export default PlaylistCard;
