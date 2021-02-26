@@ -2,20 +2,23 @@ import SongSearch from '../partials/SongSearch'
 
 
 const SearchResults = (props) => {
+
     { console.log('🙏🏼', props.content.length) }
-    let songList
+    let songList;
+
+
 
     if (props.content.length > 0) {
         songList = props.content.map((song, i) => (
-            <li key={i} className="song-card">
-                <h4>{song.name}</h4>
+            <li className="song-card">
+                <h4 key={i}>{song.name}</h4>
             </li>
         ))
     } else {
         <h1>Loading</h1>
     }
-    return (
 
+    return (
         <div className="container">
             {/* <h1>THIS IS WHERE YOUR SEARCH RESULTS WILL BE</h1> */}
             <div className="inner-container">
@@ -24,7 +27,6 @@ const SearchResults = (props) => {
                 {/* <PlaylistCard songList={songList} /> */}
                 <SongSearch songList={songList} />
             </div>
-            <SongSearch songList={songList} />
         </div>
     );
 }
