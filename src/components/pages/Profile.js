@@ -79,7 +79,7 @@ const Profile = (props) => {
       <form onSubmit={createPlaylist}>
         <div className="form-elem">
           <label htmlFor="title">Playlist Title</label>
-          <input type="text" name="title" placeholder="Title of your Playlist" onChange={e => props.setTitle(e.target.value)} />
+          <input type="text" className="input-bar" name="title" placeholder="Title of your Playlist" onChange={e => props.setTitle(e.target.value)} />
           <input type="submit" value="Create Playlist" />
         </div>
       </form>
