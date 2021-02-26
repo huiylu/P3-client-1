@@ -10,15 +10,15 @@ const Profile = (props) => {
 
   const [message, setMessage] = useState('Loading msg...');
 
-  const createPlaylist = (e) => {
-    e.preventDefault();
-    axios.post(
-      `${process.env.REACT_APP_SERVER_URL}/playlist`,
-      { title }
-    ).then(response => {
-      console.log(response.data)
-    }).catch(err => console.log(`CREATE PLAYLIST ERROR 🤬`, err));
-  };
+  // const createPlaylist = (e) => {
+  //   e.preventDefault();
+  //   axios.post(
+  //     `${process.env.REACT_APP_SERVER_URL}/playlist`,
+  //     { title }
+  //   ).then(response => {
+  //     console.log(response.data)
+  //   }).catch(err => console.log(`CREATE PLAYLIST ERROR 🤬`, err));
+  // };
 
 
   useEffect(() => {
