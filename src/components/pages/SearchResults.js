@@ -9,6 +9,7 @@ const SearchResults = (props) => {
         songList = props.content.map((song, i) => (
             <li key={i} className="song-card">
                 <h4>{song.name}</h4>
+                <button>Add to Playlist</button>
             </li>
         ))
     } else {
@@ -24,7 +25,7 @@ const SearchResults = (props) => {
                 {/* <PlaylistCard songList={songList} /> */}
                 <SongSearch songList={songList} />
             </div>
-            <SongSearch songList={songList} />
+            {/* <SongSearch songList={songList} /> */}
         </div>
     );
 }
