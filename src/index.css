@@ -101,3 +101,7 @@ code {
   margin-top: 3vh;
   margin-bottom: 5vh;
 }
+
+li {
+  list-style: none;
+}
