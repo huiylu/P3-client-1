@@ -2,11 +2,8 @@ import SongSearch from '../partials/SongSearch'
 
 
 const SearchResults = (props) => {
-
     { console.log('🙏🏼', props.content.length) }
     let songList
-
-
 
     if (props.content.length > 0) {
         songList = props.content.map((song, i) => (
@@ -17,8 +14,8 @@ const SearchResults = (props) => {
     } else {
         <h1>Loading</h1>
     }
-
     return (
+
         <div className="container">
             {/* <h1>THIS IS WHERE YOUR SEARCH RESULTS WILL BE</h1> */}
             <div className="inner-container">
@@ -27,6 +24,7 @@ const SearchResults = (props) => {
                 {/* <PlaylistCard songList={songList} /> */}
                 <SongSearch songList={songList} />
             </div>
+            <SongSearch songList={songList} />
         </div>
     );
 }

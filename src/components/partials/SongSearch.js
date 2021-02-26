@@ -17,8 +17,7 @@ const SongSearch = (props) => {
 
 
     return (
-            <li>{props.songList}</li>
+            <li>{props.songList}<button >Add To Playlist</button></li>
     );
 }
-
 export default SongSearch;
