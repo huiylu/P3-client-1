@@ -5,7 +5,7 @@ const PlaylistCard = (props) => {
         playlistList = props.playlists.map((pl, i) => {
             return (
             <li className="playlist-card">
-                This is the playlist card.
+                This is playlist:
                 <h4 key={i}>{pl.title}</h4>
                 <button onClick={(e) => props.deletePlaylist}>Delete Playlist</button>
             </li>
